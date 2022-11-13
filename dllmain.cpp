@@ -24,7 +24,7 @@ uintptr_t base = (uintptr_t)GetModuleHandle(NULL);
 uintptr_t unlockoffset = 0x0;
 void unlock()
 {
-    uintptr_t num = (base + unlockoffset + 0xC);
+    uintptr_t num = (unlockoffset + 0xC);
     int num2 = mem::read<int>(num);
     uintptr_t unlock_base = num + num2 + 4 - base;
     uintptr_t numP = (base + unlock_base + 0x60);
